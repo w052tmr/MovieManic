@@ -40,6 +40,7 @@ export function useMovies(
                     if (error.name !== 'AbortError') {
                         console.error(error.message);
                         setError(error.message);
+                        setTotalResCallback?.(0);
                     }
                 } finally {
                     setIsLoading(false);
